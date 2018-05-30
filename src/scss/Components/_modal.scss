@@ -8,23 +8,28 @@
   background: rgba(0, 0, 0, 0.6);
   display: none;
 
-  .modal__content {
+  .modal {
+    position: relative;
     @include flexbox();
+    @include centerer($top: 30%);
     margin: 10% auto;
-    @include width_height(70%, 400px);
+    @include width_height(60%, 500px);
     box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.3), 0px 7px 20px 0px rgba(0, 0, 0, 0.3);
     animation-name: openModal;
     animation-duration: 1s;
+    @include text($base__font-size, $family: 'Kurale');
 
-    .modal__image {
+    &__image {
       width: 100%;
-      @include backgroundCover();
+      @include background($size: 100%);
+      background-position: center;
+      background-color: #fff;
     }
 
-    .modal__body {
+    &__body {
       @include width_height();
       padding: 20px;
-      background: $whiteColor;
+      background: $color--white;
 
       div {
         @include width_height(50%, 100%);
@@ -33,17 +38,12 @@
       }
 
       p {
-        color: $primaryTextColor;
-        padding: 0 10px 0 0;
-        width: 100%;
-      }
-
-      .tech {
-        margin-top: 12px;
+        color: $color__primary;
+        padding: 8px 10px 20px 0;
       }
 
       a {
-        color: $primaryTextColor;
+        color: $color__primary;
         text-decoration: underline;
         margin-top: 16px;
       }
@@ -65,5 +65,26 @@
         }
       }
     }
+
+    &__price {
+      margin-top: $margin__primary;
+      
+      span {
+        color: $color--orange;
+      }
+    }
+
+    &__name {
+      margin-top: 50px;
+    }
   }
+}
+
+@include keyframes(openModal) {
+	from {
+		opacity: 0
+	}
+	to {
+		opacity: 1
+	}
 }

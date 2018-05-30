@@ -76,6 +76,11 @@
       }
     }
   }
+
+  .modal {
+    width: 90% !important;
+    top: 40% !important;
+  }
 }
 
 @media screen and (max-width: 680px) {
@@ -121,14 +126,26 @@
   }
 
   .header {
-    .header__title {
-      font-size: em(26);
+    &__title {
+      font-size: em(26) !important;
+    }
+
+    &__sub::after, &__sub::before {
+      content: "" !important;
+      width: 0 !important;
+      height: 0 !important;
     }
   }
 
   .footer {
     &__menu {
       margin-bottom: 10px;
+    }
+  }
+
+  .modal {
+    &__image {
+      display: none;
     }
   }
 }

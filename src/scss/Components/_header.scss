@@ -12,6 +12,8 @@
 
   .hamburger-inner, .hamburger-inner::after, .hamburger-inner::before {
     background-color: $color--purple !important;
+    width: 25px !important;
+    height: 3px !important;
   }
 
   &__title {
@@ -25,9 +27,30 @@
   }
 
   &__sub {
-    @include text($base__font-size, $family: 'serif', $color: $color--purple);
+    @include text($base__font-size, $family: 'Kurale', $color: $color--purple);
     display: block;
     text-align: center;
+    position: relative;
+
+    &::after {
+      content: "";
+      height: 1px;
+      width: 25px;
+      background: $color--purple--light;
+      position: absolute;
+      top: 10px;
+      right: 0;
+    }
+
+    &::before {
+      content: "";
+      height: 1px;
+      width: 25px;
+      background: $color--purple--light;
+      position: absolute;
+      top: 10px;
+      left: 0;
+    }
   }
 
   &__profile {
@@ -42,6 +65,7 @@
     }
 
     & > div {
+      @include text($base__font-size, $family: 'Kurale', $color: $color--orange);
       font-style: italic;
     }
 
@@ -79,6 +103,7 @@
   background: $color--purple;
   color: #fff;
   margin-top: 30px;
+  @include text($base__font-size, $family: 'Kurale');
 
   .menu {
     li {

@@ -40,7 +40,12 @@
     width: 50%;
 
     p {
-      margin-bottom: $margin__primary;
+      margin-bottom: $margin__primary !important;
+      @include text($base__font-size, $family: $text__family--secondary);      
+
+      &:first-child {
+        @include text($base__font-size, $family: 'Kurale');
+      }
     }
   }
   

@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Oswald:300,400,500,700");
 @import url("http://fonts.googleapis.com/css?family=Droid+Sans:300,400,500,700");
+@import url("https://fonts.googleapis.com/css?family=Kurale");
 a {
   color: #fff;
   text-decoration: none;
@@ -42,6 +43,8 @@ i.fas:hover, i.fab:hover {
 
 .main h2 {
   margin: 45px 0 60px 45px;
+  font-family: 'Kurale';
+  color: #303132;
 }
 
 @media screen and (max-width: 800px) {
@@ -101,6 +104,10 @@ i.fas:hover, i.fab:hover {
   .footer__right input[type=submit] {
     margin-top: 12px;
   }
+  .modal {
+    width: 90% !important;
+    top: 40% !important;
+  }
 }
 
 @media screen and (max-width: 680px) {
@@ -145,11 +152,19 @@ i.fas:hover, i.fab:hover {
   .potions {
     grid-template-columns: 1fr !important;
   }
-  .header .header__title {
-    font-size: 1.625em;
+  .header__title {
+    font-size: 1.625em !important;
+  }
+  .header__sub::after, .header__sub::before {
+    content: "" !important;
+    width: 0 !important;
+    height: 0 !important;
   }
   .footer__menu {
     margin-bottom: 10px;
+  }
+  .modal__image {
+    display: none;
   }
 }
 
@@ -166,6 +181,7 @@ i.fas:hover, i.fab:hover {
   border-radius: 4px;
   text-transform: uppercase;
   transition: .2s;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -197,6 +213,8 @@ i.fas:hover, i.fab:hover {
 
 .header .hamburger-inner, .header .hamburger-inner::after, .header .hamburger-inner::before {
   background-color: #523468 !important;
+  width: 25px !important;
+  height: 3px !important;
 }
 
 .header__title {
@@ -217,12 +235,33 @@ i.fas:hover, i.fab:hover {
 .header__sub {
   font-size: 1em;
   line-height: 1.25;
-  font-family: "serif";
+  font-family: "Kurale";
   color: #523468;
   margin-bottom: 0em;
   font-weight: normal;
   display: block;
   text-align: center;
+  position: relative;
+}
+
+.header__sub::after {
+  content: "";
+  height: 1px;
+  width: 25px;
+  background: #bd92db;
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
+
+.header__sub::before {
+  content: "";
+  height: 1px;
+  width: 25px;
+  background: #bd92db;
+  position: absolute;
+  top: 10px;
+  left: 0;
 }
 
 .header__profile {
@@ -251,6 +290,12 @@ i.fas:hover, i.fab:hover {
 }
 
 .header__profile > div {
+  font-size: 1em;
+  line-height: 1.25;
+  font-family: "Kurale";
+  color: #DB5038;
+  margin-bottom: 0em;
+  font-weight: normal;
   font-style: italic;
 }
 
@@ -296,6 +341,12 @@ i.fas:hover, i.fab:hover {
   background: #523468;
   color: #fff;
   margin-top: 30px;
+  font-size: 1em;
+  line-height: 1.25;
+  font-family: "Kurale";
+  color: #303132;
+  margin-bottom: 0em;
+  font-weight: normal;
 }
 
 .nav .menu li {
@@ -353,11 +404,18 @@ i.fas:hover, i.fab:hover {
 }
 
 .potions .potion__name {
+  font-size: 1em;
+  line-height: 1.25;
+  font-family: "Kurale";
+  color: #303132;
+  margin-bottom: 0em;
+  font-weight: bold;
   text-align: center;
 }
 
 .potions .potion__name span {
   color: #DB5038;
+  font-weight: normal;
 }
 
 .potions .potion:hover {
@@ -424,5 +482,157 @@ i.fas:hover, i.fab:hover {
 }
 
 .footer__right p {
+  margin-bottom: 12px !important;
+  font-size: 1em;
+  line-height: 1.25;
+  font-family: "Droid Sans", "sans-serif";
+  color: #303132;
+  margin-bottom: 0em;
+  font-weight: normal;
+}
+
+.footer__right p:first-child {
+  font-size: 1em;
+  line-height: 1.25;
+  font-family: "Kurale";
+  color: #303132;
+  margin-bottom: 0em;
+  font-weight: normal;
+}
+
+.modal__container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+}
+
+.modal__container .modal {
+  position: relative;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 10% auto;
+  width: 60%;
+  height: 500px;
+  box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.3), 0px 7px 20px 0px rgba(0, 0, 0, 0.3);
+  animation-name: openModal;
+  animation-duration: 1s;
+  font-size: 1em;
+  line-height: 1.25;
+  font-family: "Kurale";
+  color: #303132;
+  margin-bottom: 0em;
+  font-weight: normal;
+}
+
+.modal__container .modal__image {
+  width: 100%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #fff;
+}
+
+.modal__container .modal__body {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background: #fff;
+}
+
+.modal__container .modal__body div {
+  width: 50%;
+  height: 100%;
+  background: #4e4e4e;
+  float: right;
+}
+
+.modal__container .modal__body p {
+  color: #303132;
+  padding: 8px 10px 20px 0;
+}
+
+.modal__container .modal__body a {
+  color: #303132;
+  text-decoration: underline;
+  margin-top: 16px;
+}
+
+.modal__container .modal__body h3 {
   margin-bottom: 12px;
+}
+
+.modal__container .modal__body .closeBtn {
+  position: relative;
+  top: -10px;
+  right: -10px;
+  font-size: 36px;
+  float: right;
+  color: #ccc;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.modal__container .modal__body .closeBtn:hover {
+  color: #000;
+}
+
+.modal__container .modal__price {
+  margin-top: 12px;
+}
+
+.modal__container .modal__price span {
+  color: #DB5038;
+}
+
+.modal__container .modal__name {
+  margin-top: 50px;
+}
+
+@-webkit-keyframes openModal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes openModal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes openModal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes openModal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

@@ -17,10 +17,12 @@
     }
 
     &__name {
+      @include text($base__font-size, $family: 'Kurale', $weight: bold);      
       text-align: center;
 
       span {
         color: $color--orange;
+        font-weight: normal;
       }
     }
 

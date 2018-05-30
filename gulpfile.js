@@ -15,8 +15,8 @@ const sassDest = './src/css';
 
 const htmlSrc = './src/*.html';
 
-const imageSrc = 'src/images/**/*.+(png|jpg|gif|svg)';
-const imageDest = 'dist/images';
+const imageSrc = 'src/assets/**/*.+(png|jpg|gif|svg)';
+const imageDest = 'dist/assets';
 
 var prodDest = 'dist';
 
@@ -46,7 +46,9 @@ gulp.task('misc', function () {
 // Move and minify images to dist
 gulp.task('images', function () {
 	return gulp.src(imageSrc)
-		.pipe(cache(imagemin()))
+		.pipe(cache(imagemin([
+			imagemin.optipng({optimizationLevel: 5})
+		])))
 		.pipe(gulp.dest(imageDest));
 });
 

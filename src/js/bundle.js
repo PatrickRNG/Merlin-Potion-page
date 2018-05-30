@@ -117,9 +117,9 @@ function createPotions({id, name, image, price}) {
 
   const potionContent = 
   `<div class="potion" id="potion_${id}">
-    <img class="potion__image" src="assets/products/${image}">
+    <img class="potion__image" src="assets/products/${image}" onerror="imgError(${image});">
     <p class="potion__name">${name} -
-    <span>${price}</span>
+    <span>$${price}</span>
     </p>
   </div>
   `;
@@ -130,25 +130,26 @@ function createPotions({id, name, image, price}) {
 
 function createModal({id, name, image, price, effect, ingredients}) {
 
-  // let ingredientsLi = '';
-  // ingredients.forEach(el => {
-  //   ingredientsLi += `<li>${el}</li>`;
-  // });
+  let ingredientsLi = '';
+
+  ingredients.forEach(el => {
+    ingredientsLi += `<li>${el}</li>`;
+  });
 
   const modalContent =
   `<div class="modal">
-    <div class="modal__image" style="background-image:url(${image})"></div>
+    <div class="modal__image" style="background-image:url(assets/products/${image})"></div>
     <div class="modal__body" id="js_modal_body">
       <span class="closeBtn" id="js_closeBtn">&times;</span>
-      <h3>${name}</h3>
+      <h3 class="modal__name">${name}</h3>
       <h3>Use/Effect:</h3>
       <p>${effect}</p>
       <h3>Ingredients:</h3>
       <ul class="modal__ingredients">
-        
+        ${ingredientsLi}
       </ul>
-      <h3>Price:<br>${price}</h3>
-      <div class="btn btn--orange">Add to cart</a>
+      <h3 class="modal__price">Price:<br><span>$${price}</span></h3>
+      <button class="btn btn--orange">Add to cart</button>
     </div>
   </div>`;
 
@@ -156,13 +157,21 @@ function createModal({id, name, image, price, effect, ingredients}) {
 
 }
 
+window.addEventListener('click', e => {
 
+	let closeBtn = document.getElementById('js_closeBtn');
 
-
+	if (e.target == modal) {
+		modal.style.display = 'none';
+	}
+	if (e.target == closeBtn) {
+		modal.style.display = 'none';
+	}
+});
 
 function imgError(image) {
   image.onerror = "";
-  image.src = "./images/imgError.png";
+  image.src = "./assets/imgError.png";
   return true;
 }
 
