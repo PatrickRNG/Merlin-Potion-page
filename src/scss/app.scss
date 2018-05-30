@@ -2,6 +2,8 @@
 @import './Helpers/_mixins.scss';
 @import './Helpers/_parameters.scss';
 @import './Helpers/_functions.scss';
+@import './Helpers/_default.scss';
+
 
 // Pages
 @import './Pages/_home.scss';
@@ -12,3 +14,7 @@
 // Components
 @import './Components/_buttons.scss';
 @import './Components/_cards.scss';
+@import './Components/_header.scss';
+@import './Components/_potions.scss';
+@import './Components/_footer.scss';
+@import './Components/_modal.scss';

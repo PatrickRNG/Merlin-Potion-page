@@ -8,6 +8,8 @@
 	<!-- build:css css/main.min.css -->
 	<link rel="stylesheet" href="css/app.css">
 	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+	<link rel="stylesheet" href="../node_modules/hamburgers/dist/hamburgers.min.css">
 	<!-- endbuild -->
 	<title>Next</title>
 </head>
@@ -15,9 +17,111 @@
 <body>
 
 	<div class="container">
-		<header>
-			<nav></nav>
+		<header class="header header--after">
+			<button class="hamburger hamburger--collapse" id="menu__mobile" type="button">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
+			</button>
+			<div class="header__logo">
+				<h1 class="header__title">
+					<span>Merlin's</span> Potions
+				</h1>
+				<span class="header__sub">fine potions since 2016</span>
+			</div>
+			<div class="header__input">
+				<input class="input input__header" type="text" placeholder="Search our stock">
+				<i class="fas fa-search"></i>
+			</div>
+			<div class="header__profile">
+				<div>
+					<p>Free shiping</p>
+					<small>on orders over $50</small>
+				</div>
+				<i class="fas fa-shopping-cart"></i>
+				<p>Bag:
+					<span>1</span>
+				</p>
+			</div>
 		</header>
+
+		<nav class="nav" id="nav__js">
+			<ul class="menu">
+				<li class="menu__item">
+					<a href="#">Potions</a>
+				</li>
+				<li class="menu__item">
+					<a href="#">Ingredients</a>
+				</li>
+				<li class="menu__item">
+					<a href="#">Books</a>
+				</li>
+				<li class="menu__item">
+					<a href="#">Supplies</a>
+				</li>
+				<li class="menu__item">
+					<a href="#">Charms</a>
+				</li>
+				<li class="menu__item">
+					<a href="#">Clearance!</a>
+				</li>
+			</ul>
+			<div class="login">
+				<p>
+					<a href="#" class="login--sign">Sign In</a> or
+					<a href="#" class="login--sign">Sign Up</a>
+				</p>
+			</div>
+		</nav>
+
+		<main class="main">
+			<h2>Potions</h2>
+			<section class="potions" id="potions__js">
+				
+			</section>
+			<div class="modal__container" id="js__modal">
+
+			</div>
+		</main>
+
+		<footer class="footer">
+			<div class="footer__left">
+				<ul class="footer__menu">
+					<li class="footer__menu__item">
+						<a href="">Company</a>
+					</li>
+					<li class="footer__menu__item">
+						<a href="">Contact Us</a>
+					</li>
+					<li class="footer__menu__item">
+						<a href="">Shipping</a>
+					</li>
+				</ul>
+				<ul class="footer__menu">
+					<li class="footer__menu__item">
+						<a href="">Returns</a>
+					</li>
+					<li class="footer__menu__item">
+						<a href="">Careers</a>
+					</li>
+				</ul>
+				<div class="social">
+					<i class="fab fa-facebook"></i>
+					<i class="fab fa-twitter"></i>
+					<i class="fab fa-pinterest"></i>
+					<i class="fab fa-tumblr"></i>
+					<i class="fab fa-google"></i>
+					<p>&copy; 2015 Merlin's Potions. All Rights Reserved</p>
+				</div>
+			</div>
+			<div class="footer__right">
+				<p>Sign up for our Newsletter</p>
+				<p>Sign up for our Newsletter & get exclusive discounts!</p>
+				<input placeholder="Enter your email" type="text" class="input">
+				<input type="submit" value="Submit" class="btn btn--orange">
+			</div>
+		</footer>
+
 	</div>
 
 	<!-- <script src="js/main.js"></script> -->

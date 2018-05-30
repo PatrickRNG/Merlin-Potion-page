@@ -6,6 +6,129 @@
 
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 800px) {
+  .header {
+    align-items: center !important;
 
+    &--after::after {
+      text-align: center;
+      content: "Free Shipping on orders over $50";
+      position: absolute;
+      padding: 8px;
+      background: #eaeaea;
+      width: 98%;
+      bottom: -33px;
+      color: #717171;
+      font-weight: bold;
+    }
+
+    &__profile {
+      > div {
+        display: none !important;
+      }
+
+      i.fas  {
+        margin-left: 0 !important;
+      }
+    }
+  }
+
+  #menu__mobile {
+    display: block !important;
+  }
+
+  nav.nav {
+    display: none;
+    @include flex-direction(column);
+    padding: 0 !important;
+  }
+
+  .menu {
+      &__item {
+      display: block !important;
+      border-radius: 0 !important;
+      padding-left: 50px !important;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $color--purple--light;
+      }
+    }
+  }
+
+  .login {
+    text-align: center;
+    align-self: unset !important;
+  }
+
+  .header {
+    &__input {
+      display: none;
+      margin: 0 auto;
+    }
+  }
+
+  .footer {
+    padding: 30px 30px !important;
+
+    &__right {
+      input[type=submit] {
+        margin-top: $margin__primary;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .header {
+    &__profile {
+      @include flex-direction(column);
+
+      i.fas  {
+        margin: 0 0 8px 0 !important;
+      }
+    }
+  }
+  .main {
+    h2 {
+      text-align: center;
+      margin-left: 0 !important;
+    }
+  }
+
+  .potions {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .footer {
+    @include flex-direction(column-reverse);
+
+    &__right {
+      width: 100% !important;
+      margin-bottom: 20px;
+    }
+
+    &__left {
+      .social {
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 495px) {
+  .potions {
+    grid-template-columns: 1fr !important;
+  }
+
+  .header {
+    .header__title {
+      font-size: em(26);
+    }
+  }
+
+  .footer {
+    &__menu {
+      margin-bottom: 10px;
+    }
+  }
 }

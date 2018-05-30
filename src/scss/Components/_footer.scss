@@ -1,0 +1,47 @@
+.footer {
+  @include flexbox();
+  @include justify-content(space-between);
+  padding: 30px 80px;
+  background: $color__background--light;
+
+  &__left {
+    .footer__menu {
+      &__item {
+        display: inline-block;
+        text-transform: uppercase;
+  
+        a {
+          @include text($base__font-size, $family: $text__family--secondary, $color: $color--orange);
+          margin-right: 20px;
+        }
+      }
+    }
+    .social {
+      margin-top: 30px;
+      i {
+        color: $color--purple;
+        font-size: em(24);
+        margin-right: 30px;
+
+        &:nth-child(5) {
+          margin-bottom: 45px;
+        }
+      }
+
+      p {
+        @include text(14, $color: $color__secondary, $family: $text__family--secondary);        
+      }
+    }
+  }
+
+  &__right {
+    padding: 20px;
+    background: $color--white;
+    width: 50%;
+
+    p {
+      margin-bottom: $margin__primary;
+    }
+  }
+  
+}

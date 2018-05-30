@@ -1,0 +1,428 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald:300,400,500,700");
+@import url("http://fonts.googleapis.com/css?family=Droid+Sans:300,400,500,700");
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: .2s;
+}
+
+a:hover {
+  opacity: .8;
+}
+
+i {
+  cursor: pointer;
+  transition: .2s;
+}
+
+i.fas:hover, i.fab:hover {
+  opacity: .8;
+}
+
+.input {
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: 1px solid #8d8d8d;
+  width: 230px;
+  transition: .1s;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #a8a8a8;
+}
+
+.input__header {
+  padding-left: 30px;
+}
+
+.input::placeholder {
+  color: #b8b8b8;
+}
+
+.main h2 {
+  margin: 45px 0 60px 45px;
+}
+
+@media screen and (max-width: 800px) {
+  .header {
+    align-items: center !important;
+  }
+  .header--after::after {
+    text-align: center;
+    content: "Free Shipping on orders over $50";
+    position: absolute;
+    padding: 8px;
+    background: #eaeaea;
+    width: 98%;
+    bottom: -33px;
+    color: #717171;
+    font-weight: bold;
+  }
+  .header__profile > div {
+    display: none !important;
+  }
+  .header__profile i.fas {
+    margin-left: 0 !important;
+  }
+  #menu__mobile {
+    display: block !important;
+  }
+  nav.nav {
+    display: none;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-box-direction: normal;
+    -moz-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 0 !important;
+  }
+  .menu__item {
+    display: block !important;
+    border-radius: 0 !important;
+    padding-left: 50px !important;
+  }
+  .menu__item:not(:last-child) {
+    border-bottom: 1px solid #bd92db;
+  }
+  .login {
+    text-align: center;
+    align-self: unset !important;
+  }
+  .header__input {
+    display: none;
+    margin: 0 auto;
+  }
+  .footer {
+    padding: 30px 30px !important;
+  }
+  .footer__right input[type=submit] {
+    margin-top: 12px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .header__profile {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-box-direction: normal;
+    -moz-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .header__profile i.fas {
+    margin: 0 0 8px 0 !important;
+  }
+  .main h2 {
+    text-align: center;
+    margin-left: 0 !important;
+  }
+  .potions {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .footer {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: vertical;
+    -moz-box-direction: reverse;
+    -moz-box-orient: vertical;
+    -webkit-flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
+  .footer__right {
+    width: 100% !important;
+    margin-bottom: 20px;
+  }
+  .footer__left .social {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 495px) {
+  .potions {
+    grid-template-columns: 1fr !important;
+  }
+  .header .header__title {
+    font-size: 1.625em;
+  }
+  .footer__menu {
+    margin-bottom: 10px;
+  }
+}
+
+.btn {
+  padding: 7px 22px;
+  background-color: #DB5038;
+  font-size: 0.875em;
+  line-height: 1.42857;
+  font-family: "Droid Sans", "sans-serif";
+  color: #fff;
+  margin-bottom: 0em;
+  font-weight: normal;
+  border: none;
+  border-radius: 4px;
+  text-transform: uppercase;
+  transition: .2s;
+}
+
+.btn:hover {
+  opacity: .8;
+}
+
+.header {
+  padding: 12px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-pack: distribute;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  position: relative;
+}
+
+.header #menu__mobile {
+  font-size: 26px;
+  display: none;
+}
+
+.header .hamburger-inner, .header .hamburger-inner::after, .header .hamburger-inner::before {
+  background-color: #523468 !important;
+}
+
+.header__title {
+  font-size: 2em;
+  line-height: 0.625;
+  font-family: "Oswald", "sans-serif";
+  color: #DB5038;
+  margin-bottom: 0em;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.header__title > span {
+  font-weight: 500;
+}
+
+.header__sub {
+  font-size: 1em;
+  line-height: 1.25;
+  font-family: "serif";
+  color: #523468;
+  margin-bottom: 0em;
+  font-weight: normal;
+  display: block;
+  text-align: center;
+}
+
+.header__profile {
+  font-size: 1em;
+  line-height: 1.25;
+  font-family: "Droid Sans", "sans-serif";
+  color: #DB5038;
+  margin-bottom: 0em;
+  font-weight: normal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.header__profile i.fas {
+  color: #523468;
+  font-size: 1.5em;
+  margin: 0 20px;
+}
+
+.header__profile > div {
+  font-style: italic;
+}
+
+.header__profile p:last-child {
+  font-size: 1em;
+  line-height: 1.25;
+  font-family: "Oswald", "sans-serif";
+  color: #b8b8b8;
+  margin-bottom: 0em;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.header__profile p:last-child span {
+  color: #DB5038;
+  font-weight: bold;
+}
+
+.header__input {
+  position: relative;
+}
+
+.header__input i.fas {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color: #DB5038;
+  font-size: 0.875em;
+}
+
+.nav {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -moz-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  -webkit-justify-content: space-evenly;
+  justify-content: space-evenly;
+  padding: 10px;
+  background: #523468;
+  color: #fff;
+  margin-top: 30px;
+}
+
+.nav .menu li {
+  display: inline-block;
+  padding: 15px;
+  border-radius: 5px;
+  transition: .2s;
+}
+
+.nav .login {
+  align-self: flex-end;
+}
+
+.nav .login p {
+  color: #bd92db;
+  padding: 15px;
+  border-radius: 5px;
+  transition: .2s;
+}
+
+.nav .login a {
+  color: #fff;
+}
+
+.nav .login a:nth-child(1) {
+  margin-right: 10px;
+}
+
+.nav .login a:nth-child(2) {
+  margin-left: 10px;
+}
+
+.nav li:hover, .nav p:hover {
+  background-color: #422A53;
+}
+
+.potions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 80px;
+  align-items: center;
+  padding: 0 40px;
+  margin-bottom: 65px;
+}
+
+.potions .potion {
+  justify-self: center;
+  transition: .3s;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.potions .potion__image {
+  height: 180px;
+}
+
+.potions .potion__name {
+  text-align: center;
+}
+
+.potions .potion__name span {
+  color: #DB5038;
+}
+
+.potions .potion:hover {
+  box-shadow: 3px 3px 10px #ccc, 1px 1px 50px #ccc;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding: 30px 80px;
+  background: #E6E6E6;
+}
+
+.footer__left .footer__menu__item {
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.footer__left .footer__menu__item a {
+  font-size: 1em;
+  line-height: 1.25;
+  font-family: "Droid Sans", "sans-serif";
+  color: #DB5038;
+  margin-bottom: 0em;
+  font-weight: normal;
+  margin-right: 20px;
+}
+
+.footer__left .social {
+  margin-top: 30px;
+}
+
+.footer__left .social i {
+  color: #523468;
+  font-size: 1.5em;
+  margin-right: 30px;
+}
+
+.footer__left .social i:nth-child(5) {
+  margin-bottom: 45px;
+}
+
+.footer__left .social p {
+  font-size: 0.875em;
+  line-height: 1.42857;
+  font-family: "Droid Sans", "sans-serif";
+  color: #353f4f;
+  margin-bottom: 0em;
+  font-weight: normal;
+}
+
+.footer__right {
+  padding: 20px;
+  background: #fff;
+  width: 50%;
+}
+
+.footer__right p {
+  margin-bottom: 12px;
+}

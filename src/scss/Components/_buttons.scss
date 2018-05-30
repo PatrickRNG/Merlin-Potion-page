@@ -1,0 +1,13 @@
+.btn {
+  padding: 7px 22px;
+  background-color: $color--orange;
+  @include text(14, $color: $color--white, $family: $text__family--secondary);
+  border: none;
+  border-radius: 4px;
+  text-transform: uppercase;
+  transition: .2s;
+
+  &:hover {
+    opacity: .8;
+  }
+}

@@ -1,20 +1,23 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,700i,900');
-@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700');
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,500,700');
+@import url('http://fonts.googleapis.com/css?family=Droid+Sans:300,400,500,700');
 
 $color__primary: #303132 !default;
 $color__primary--light: #5e6774 !default;
 $color__secondary: #353f4f !default;
-$color--light: #d3d1d1;
+$color--light: #b8b8b8;
 $color--white: #fff !default;
 $color--black: #111 !default;
-$color--orange: #ff6600 !default;
+$color--orange: #DB5038 !default;
+$color--purple:#523468 !default;
+$color--purple--dark:#422A53 !default;
+$color--purple--light:#bd92db !default;
 $color--dark: #202020;
-$color__background--light: #f7f7f7;
+$color__background--light: #E6E6E6;
 
 $base__font-size: 16 !default;
 $base__line: 20 !default;
 
-$text__family: 'Roboto', 'sans-serif';
+$text__family: 'Oswald', 'sans-serif';
+$text__family--secondary: 'Droid Sans', 'sans-serif';
 
 $margin__primary: 12px;

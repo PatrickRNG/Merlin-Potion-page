@@ -1,0 +1,38 @@
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: .2s;
+
+  &:hover {
+    opacity: .8;
+  }
+}
+
+i {
+  cursor: pointer;
+  transition: .2s;
+  &.fas:hover, &.fab:hover {
+    opacity: .8;
+  }
+}
+
+.input {
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: 1px solid #8d8d8d;
+  width: 230px;
+  transition: .1s;
+
+  &:focus {
+    outline: none;
+    border-color: #a8a8a8;
+  }
+
+  &__header {
+    padding-left: 30px;
+  }
+
+  &::placeholder {
+    color: $color--light;
+  }
+}

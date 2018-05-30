@@ -1,0 +1,120 @@
+.header {
+  padding: 12px;
+  @include flexbox();
+  @include justify-content(space-around);
+  @include align-items(flex-start);
+  position: relative;
+
+  #menu__mobile {
+    font-size: 26px;
+    display: none;
+  }
+
+  .hamburger-inner, .hamburger-inner::after, .hamburger-inner::before {
+    background-color: $color--purple !important;
+  }
+
+  &__title {
+    @include text(32, $color: $color--orange, $weight: 300);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+
+    & > span {
+      font-weight: 500;
+    }
+  }
+
+  &__sub {
+    @include text($base__font-size, $family: 'serif', $color: $color--purple);
+    display: block;
+    text-align: center;
+  }
+
+  &__profile {
+    @include text($base__font-size, $color: $color--orange, $family: $text__family--secondary);
+    @include flexbox();
+    @include align-items(center);
+
+    i.fas {
+      color: $color--purple;
+      font-size: em(24);
+      margin: 0 20px;
+    }
+
+    & > div {
+      font-style: italic;
+    }
+
+    p:last-child {
+      @include text($base__font-size, $color: $color--light);
+      text-transform: uppercase;
+
+      span {
+        color: $color--orange;
+        font-weight: bold;
+      }
+    }
+
+  }
+
+  &__input {
+    position: relative;
+
+    i.fas {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      color: $color--orange;
+      font-size: em(14);
+    }
+  }
+}
+
+// Nav Menu
+
+.nav {
+  @include flexbox();
+  @include justify-content(space-evenly);
+  padding: 10px;
+  background: $color--purple;
+  color: #fff;
+  margin-top: 30px;
+
+  .menu {
+    li {
+      display: inline-block;
+      padding: 15px;
+      border-radius: 5px;
+      transition: .2s;
+    }
+  }
+
+  .login {
+    align-self: flex-end;
+
+    p {
+      color: $color--purple--light;
+      padding: 15px;
+      border-radius: 5px;
+      transition: .2s;
+    }
+
+    a {
+      color: #fff;
+
+      &:nth-child(1) {
+        margin-right: 10px;
+      }
+
+      &:nth-child(2) {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  li, p {
+    &:hover {
+      background-color: $color--purple--dark;
+    }
+  }
+}

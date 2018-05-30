@@ -1,0 +1,31 @@
+.potions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 80px;
+  align-items: center;
+  padding: 0 40px;
+  margin-bottom: 65px;
+
+  .potion {
+    justify-self: center;
+    transition: .3s;
+    padding: 10px;
+    cursor: pointer;
+
+    &__image {
+      height: 180px;
+    }
+
+    &__name {
+      text-align: center;
+
+      span {
+        color: $color--orange;
+      }
+    }
+
+    &:hover {
+      box-shadow: 3px 3px 10px #ccc, 1px 1px 50px #ccc;
+    }
+  }
+}
